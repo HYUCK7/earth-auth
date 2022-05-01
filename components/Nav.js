@@ -27,6 +27,7 @@ const basicSettings = {
 export function Nav(){
     const [loginCheck, setLoginCheck] = useState(false)
     const dispatch = useDispatch()
+    const [userUrls, setUserUrls] = useState({subTitles: [], urls: []})
     const [anchorElNav, setAnchorElNav] = useState(null)
     const [anchorElUser, setAnchorElUser] = useState(null)
     const [imageInfos, setImageInfos] = useState({
@@ -66,10 +67,10 @@ export function Nav(){
                 imageTitle: 'sign'
             })
         } else {
-            setuserUrls({
+            setUserUrls({
                 subTitles: [
-                    '프로필', '정보수정', '회원탈퇴'
-                ], urls: ['/user/profile', '/auth/modifyUser', '/auth/delUser']
+                    '프로필', '정보수정', '회원탈퇴', '로그아웃'
+                ], urls: ['/user/profile', '/auth/modifyUser', '/auth/delUser', '/auth/logout']
             })
             setImageInfos({
                 imageUrl: 'https://www.w3schools.com/howto/img_avatar.png', imageTitle: 'users'

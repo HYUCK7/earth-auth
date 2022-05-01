@@ -5,10 +5,15 @@ import {Footer, Header, Nav} from "@/components"
 import {wrapper} from '@/modules/store'
 import withReduxSaga from 'next-redux-saga'
 
-const App = ({component}) => {
+const App = ({Component}) => {
   return <> < Header/> < Nav/>
   <div className="AppMinHeight">
     <Component/>
   </div>
+   <Footer/>
   </>
 }
+App.PropTypes = {
+  Component: PropTypes.elementType
+}
+export default wrapper.withRedux(withReduxSaga(App))
